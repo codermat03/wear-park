@@ -57,7 +57,7 @@ const CategoryPage = () => {
                   height={500}
                 />
                 <h3 className="text-lg font-semibold">{product.name}</h3>
-                <p className="text-gray-500">${product.price}</p>
+                <p className="text-gray-500">৳{product.price}</p>
                 <p className="text-sm text-gray-400">{product.rating} ★</p>
                 <Link
                   href={`/singleProduct/${product._id}?name=${
