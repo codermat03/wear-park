@@ -1,11 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { FaEye, FaHeart, FaStar } from "react-icons/fa";
-import { FaRightLeft } from "react-icons/fa6";
+import { FaStar } from "react-icons/fa";
 
 interface Product {
   _id: string;
@@ -81,7 +79,7 @@ const TrendyCollection = () => {
                 <Image
                   src={product.image}
                   alt={product.name}
-                  className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105 rounded-md h-[300px] md:h-full mx-auto"
+                  className="w-full md:h-[360px] object-cover transition-transform duration-300 group-hover:scale-105 rounded-md h-[300px] mx-auto"
                   width={500}
                   height={750}
                 />
@@ -91,18 +89,6 @@ const TrendyCollection = () => {
                     Sale
                   </span>
                 )}
-
-                <div className="absolute top-2 right-2 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
-                  <Link href="https://facebook.com">
-                    <FaHeart className="w-5 h-5 text-white" />
-                  </Link>
-                  <Link href="https://instagram.com">
-                    <FaEye className="w-5 h-5 text-white" />
-                  </Link>
-                  <Link href="https://instagram.com">
-                    <FaRightLeft className="w-5 h-5 text-white" />
-                  </Link>
-                </div>
               </div>
 
               <div className="mt-4 text-center">
@@ -115,11 +101,10 @@ const TrendyCollection = () => {
                   {Array.from({ length: 5 }, (_, i) => (
                     <FaStar
                       key={i}
-                      className={`w-4 h-4 ${
-                        i < Math.round(product.rating)
-                          ? "text-yellow-500"
-                          : "text-gray-300"
-                      }`}
+                      className={`w-4 h-4 ${i < Math.round(product.rating)
+                        ? "text-yellow-500"
+                        : "text-gray-300"
+                        }`}
                     />
                   ))}
                 </div>
